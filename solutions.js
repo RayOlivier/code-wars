@@ -1,5 +1,4 @@
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
-
 function XO(str) {
   //code here
   let xCount = 0;
@@ -38,3 +37,13 @@ function findShort(s) {
 
   return shortLength;
 }
+
+// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+function makeNegative(num) {
+  if (num > 0) {
+    return num - num * 2;
+  } else {
+    return num;
+  }
+}
+//notes: apparently you can make a variable negative just but putting a - in front of it, x: -num
