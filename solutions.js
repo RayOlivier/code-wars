@@ -45,5 +45,37 @@ function makeNegative(num) {
   } else {
     return num;
   }
+} //notes: apparently you can make a variable negative just but putting a - in front of it, x: -num
+
+// Given an array of integers your solution should find the smallest integer.
+
+// For example:
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let smallest = args[0];
+    args.forEach((e) => {
+      if (e < smallest) {
+        smallest = e;
+      }
+    });
+    return smallest;
+  }
+} //ideal solution: return Math.min(...args)
+//note: don't forget built in Math options!
+
+// Your task is to make two functions, max and min (maximum and minimum in PHP) that take a(n) array/vector of integers list as input and outputs, respectively, the largest and lowest number in that array/vector.
+//basically the same thing but i used min and max this time
+var min = function(list) {
+  return Math.min(...list);
+};
+
+var max = function(list) {
+  return Math.max(...list);
+};
+
+// Simple, remove the spaces from the string, then return the resultant string.
+function noSpace(x) {
+  return x.split(" ").join("");
 }
-//notes: apparently you can make a variable negative just but putting a - in front of it, x: -num
