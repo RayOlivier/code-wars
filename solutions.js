@@ -1,3 +1,5 @@
+////////////////////// 8 KYU and 7 KYU //////////////////////////////////
+
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 function XO(str) {
   //code here
@@ -78,4 +80,36 @@ var max = function(list) {
 // Simple, remove the spaces from the string, then return the resultant string.
 function noSpace(x) {
   return x.split(" ").join("");
+} //notes: regex alternative x.replace(/\s/g, '')
+
+////////////////////////// 6 KYU //////////////////////////////////////////
+
+// Build Tower by the following given argument:
+// number of floors (integer and always greater than 0).
+
+// Tower block is represented as *
+//EXAMPLE: 6 floors, note the spaces around the stars
+// [
+//   '     *     ',
+//   '    ***    ',
+//   '   *****   ',
+//   '  *******  ',
+//   ' ********* ',
+//   '***********'
+// ]
+
+function towerBuilder(nFloors) {
+  let arr = [];
+  let totalChars = 1 + (nFloors - 1) * 2;
+  console.log(totalChars);
+  for (let i = 1; i <= nFloors; i++) {
+    let starsNum = i * 2 - 1;
+    let sideSpaces = (totalChars - starsNum) / 2;
+    let row =
+      " ".repeat(sideSpaces) + "*".repeat(starsNum) + " ".repeat(sideSpaces);
+
+    arr.push(row);
+  }
+  console.log(arr);
+  return arr;
 }
