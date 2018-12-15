@@ -95,6 +95,16 @@ function getCount(str) {
   return vowelsCount;
 }
 
+// Complete the solution so that it reverses the string value passed into it.
+function solution(str) {
+  newArr = [];
+  str.split("").forEach((e, i, arr) => {
+    newArr.unshift(e);
+  });
+
+  return newArr.join(""); //notes: fuck, there's a .reverse for arrays /facepalm
+}
+
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
