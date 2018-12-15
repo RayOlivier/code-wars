@@ -82,7 +82,22 @@ function noSpace(x) {
   return x.split(" ").join("");
 } //notes: regex alternative x.replace(/\s/g, '')
 
+// Return the number (count) of vowels in the given string. We will consider a, e, i, o, and u as vowels for this Kata.
+function getCount(str) {
+  var vowelsCount = 0;
+
+  str.split("").forEach((e, i, arr) => {
+    if (e === "a" || e === "e" || e === "i" || e === "o" || e === "u") {
+      vowelsCount++;
+    }
+  });
+
+  return vowelsCount;
+}
+
+////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 // Build Tower by the following given argument:
 // number of floors (integer and always greater than 0).
