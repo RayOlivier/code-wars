@@ -105,6 +105,19 @@ function solution(str) {
   return newArr.join(""); //notes: fuck, there's a .reverse for arrays /facepalm
 }
 
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+String.prototype.toJadenCase = function() {
+  let result = [];
+  let arr = this.split(" ");
+
+  arr.forEach((e) => {
+    result.push(e.charAt(0).toUpperCase() + e.substring(1));
+  });
+
+  return result.join(" ");
+};
+
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
