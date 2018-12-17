@@ -118,6 +118,11 @@ String.prototype.toJadenCase = function() {
   return result.join(" ");
 };
 
+// Write a function that returns both the minimum and maximum number of the given list/array.
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)]; // fix me!
+}
+
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -151,3 +156,31 @@ function towerBuilder(nFloors) {
   console.log(arr);
   return arr;
 }
+
+// -Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+// -A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+// -Every smiling face must have a smiling mouth that should be marked with either ) or D.
+// No additional characters are allowed except for those mentioned.
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+  let count = 0;
+  arr.forEach((e) => {
+    if (
+      e.length < 3 &&
+      (e.charAt(0) === ":" || e.charAt(0) === ";") &&
+      (e.charAt(e.length - 1) === ")" || e.charAt(e.length - 1) === "D")
+    ) {
+      count++;
+    } else if (
+      e.length === 3 &&
+      (e.charAt(0) === ":" || e.charAt(0) === ";") &&
+      (e.charAt(e.length - 1) === ")" || e.charAt(e.length - 1) === "D") &&
+      (e.charAt(1) === "-" || e.charAt(1) === "~")
+    ) {
+      count++;
+    }
+  });
+
+  return count;
+} //notes: arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+//regex is magic and I need to learn it
