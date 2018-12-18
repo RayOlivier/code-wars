@@ -120,7 +120,7 @@ String.prototype.toJadenCase = function() {
 
 // Write a function that returns both the minimum and maximum number of the given list/array.
 function minMax(arr) {
-  return [Math.min(...arr), Math.max(...arr)]; // fix me!
+  return [Math.min(...arr), Math.max(...arr)]; //this took like 30 seconds lol
 }
 
 ////////////////////////////////////////////////////////////////////////////
