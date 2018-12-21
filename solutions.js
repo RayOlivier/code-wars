@@ -123,6 +123,13 @@ function minMax(arr) {
   return [Math.min(...arr), Math.max(...arr)]; //this took like 30 seconds lol
 }
 
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 integers. No floats or empty arrays will be passed.
+function sumTwoSmallestNumbers(numbers) {
+  numbers.sort((a, b) => a - b);
+  console.log(numbers);
+  return numbers[0] + numbers[1];
+}
+
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
