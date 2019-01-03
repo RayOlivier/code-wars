@@ -138,6 +138,17 @@ function filter_list(l) {
   });
 }
 
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+var gimme = function(inputArray) {
+  let result;
+  inputArray.forEach((e, i, arr) => {
+    if (e !== Math.max(...inputArray) && e !== Math.min(...inputArray)) {
+      result = i;
+    }
+  });
+  return result;
+}; //notes: forgot the spread operator at first
+
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////// 6 KYU //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
