@@ -199,3 +199,58 @@ function countSmileys(arr) {
   return count;
 } //notes: arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
 //regex is magic and I need to learn it
+
+// The new "Avengers" movie has just been released! There are a lot of people at the cinema box office standing in a huge line. Each of them has a single 100, 50 or 25 dollars bill. An "Avengers" ticket costs 25 dollars.
+
+// Vasya is currently working as a clerk. He wants to sell a ticket to every single person in this line.
+
+// Can Vasya sell a ticket to each person and give the change if he initially has no money and sells the tickets strictly in the order people follow in the line?
+
+// Return YES, if Vasya can sell a ticket to each person and give the change with the bills he has at hand at that moment. Otherwise return NO.
+
+function tickets(peopleInLine) {
+  let numberOfPeople = peopleInLine.length;
+  let count25 = 0;
+  let count50 = 0;
+  let count100 = 0;
+
+  peopleInLine.forEach((e, i, arr) => {
+    if (e === 25) {
+      count25 += 1;
+    }
+    if (e === 50) {
+      count50 += 1;
+    }
+    if (e === 100) {
+      count100 += 1;
+    }
+  });
+
+  console.log(numberOfPeople, count25, count50, count100);
+  //for every 100, you need 1 25 and 1 50
+  //for every 50, you need 1 25
+
+  for (let i = count50; i > 0; i--) {
+    count25 -= 1;
+  }
+
+  for (let i = count100; i > 0; i--) {
+    if (count50 > 0) {
+      console.log("subtracting a fifty");
+      count50 -= 1;
+      count25 -= 1;
+    } else {
+      console.log("subtracting a triple 25");
+
+      count25 -= 3;
+    }
+  }
+
+  console.log(numberOfPeople, count25, count50, count100);
+
+  if (count25 < 0 || count50 < 0 || count100 < 0) {
+    return "NO";
+  } else {
+    return "YES";
+  }
+} //NOTES: this works but doesn't consider the order of the line because I didn't read that part.
